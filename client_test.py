@@ -18,4 +18,4 @@ while True:
 
 sock.send('Client disconnecting')
 
-# sock.shutdown(socket.SHUT_WR)
+sock.shutdown(socket.SHUT_WR)

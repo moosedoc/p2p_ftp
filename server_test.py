@@ -16,9 +16,6 @@ while True:
 	try:
 		l=conn.recv(1024)
 		while l:
-			print l
+			print 'Message from {0}: {1}'.format(addr, l)
 			l=conn.recv(1024)
 	except: pass
-
-conn.send('Take care {0}'.format(addr))
-conn.close()
