@@ -1,7 +1,7 @@
 # project imports
 import os
 
-def get_file(self, file=None):
+def get_file(file=None):
 	# check if file exists
 	exists = os.path.exists(file)
 	# return if true, else return -1
