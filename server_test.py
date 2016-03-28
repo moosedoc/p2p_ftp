@@ -17,7 +17,7 @@ while True:
 
 	try:
 		name=conn.recv(1024)
-		with open(DIR+name, 'w') as f:
+		with open(DIR+name, 'wb') as f:
 			l=conn.recv(1024)
 			while l:
 				print 'Message from {0}'.format(addr)

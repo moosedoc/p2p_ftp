@@ -14,7 +14,7 @@ sock.connect((host, port))
 while True:
 	file=raw_input()
 	if os.path.exists(file):
-		with open(file, 'r') as f:
+		with open(file, 'rb') as f:
 			name=os.path.basename(file)
 			l=f.read(1024)
 			sock.send(name)
