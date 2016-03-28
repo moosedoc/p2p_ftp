@@ -1,14 +1,12 @@
 import socket
 import os
 
-PATH='./server_files/file_{0}.txt'
+DIR='./server_files/'
 
 sock=socket.socket()
 
 host=socket.gethostname()
 port=5140
-
-file_num=0
 
 print 'Server start'
 sock.bind((host, port))
@@ -17,12 +15,10 @@ while True:
 	conn, addr=sock.accept()
 	print 'Connection from ... {0}'.format(addr)
 
-	while os.path.exists(PATH.format(file_num)):
-		file_num+=1
-
 	try:
-		l=conn.recv(1024)
-		with open(PATH.format(file_num), 'w') as f:
+		name=conn.recv(1024)
+		with open(DIR+name, 'w') as f:
+			l=conn.recv(1024)
 			while l:
 				print 'Message from {0}'.format(addr)
 				f.write(l)
@@ -31,5 +27,3 @@ while True:
 	except: pass
 
 sock.shutdown(socket.SHUT_WR)
-
-
