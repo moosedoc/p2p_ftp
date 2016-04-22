@@ -1,0 +1,6 @@
+# ignore transferred server files
+server_files/*
+
+# ignore compiled python files
+*.pyc
+
